@@ -2,7 +2,12 @@
   "name": "super_spider",
   "version": "1.0.0",
   "description": "super webspider",
-  "main": "build/index.html",
+  "main": "app/html/index.html",
+  "window": {
+    "toolbar": true,
+    "show": true,
+    "icon": "app/img/icon.png"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --hot --inline"
