@@ -11,12 +11,16 @@
         global.window = window;
         global.$ = $;
         global.gui = require('nw.gui');
+        global.alert= function(){alert("Nih")};
         init();
     </script>
 </head>
 <body>
 <textarea name="markdown" id="editor" class="md_editor"></textarea>
 <div class="md_result">
+
 </div>
+<input style="display:none;" id="openFileDialog" type="file" />
+<input style="display:none;" type="file"  id="saveFileDialog" nwsaveas="file.md" />
 </body>
 </html>
