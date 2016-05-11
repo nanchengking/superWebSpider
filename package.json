@@ -1,0 +1,35 @@
+{
+  "name": "super_spider",
+  "version": "1.0.0",
+  "description": "super webspider",
+  "main": "build/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --hot --inline"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nanchengking/superWebSpider.git"
+  },
+  "keywords": [
+    "spider",
+    "super",
+    "nwjs"
+  ],
+  "author": "nancheng@outlook.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nanchengking/superWebSpider/issues"
+  },
+  "homepage": "https://github.com/nanchengking/superWebSpider#readme",
+  "devDependencies": {
+    "css-loader": "^0.23.1",
+    "file-loader": "^0.8.5",
+    "html-webpack-plugin": "^2.16.1",
+    "jquery": "^2.2.3",
+    "moment": "^2.13.0",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack-dev-server": "^1.14.1"
+  }
+}
