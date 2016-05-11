@@ -4,12 +4,19 @@
     <meta charset="UTF-8">
     <title>Hello World app</title>
     <link rel="stylesheet" href="/app/assert/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/app/css/main.css" media="screen"/>
     <script src="/app/assert/jquery.js"></script>
-    <script src="../../build/bundle.js"></script>
+    <script src="../js/index.js"></script>
+    <script type="text/javascript">
+        global.window = window;
+        global.$ = $;
+        global.gui = require('nw.gui');
+        init();
+    </script>
 </head>
 <body>
-<div>
-    <button class="btn btn-success">哈哈</button>
+<textarea name="markdown" id="editor" class="md_editor"></textarea>
+<div class="md_result">
 </div>
 </body>
 </html>
