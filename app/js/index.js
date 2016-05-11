@@ -9,4 +9,6 @@ function init(){
             editor.reload();
         });
     });
+    var menu = require("./../js/menu.js");
+    menu.initMenu();
 }
