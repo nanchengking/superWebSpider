@@ -1,6 +1,7 @@
 /**
  * Created by liushuqing on 16/5/11.
  */
+var excel=require('./excel.js')
 exports.reload = function () {
     var marked = require("marked");
     marked.setOptions({
@@ -48,21 +49,8 @@ exports.chooseFile = function (name, callback) {
 };
 
 exports.chooseExcel = function handleFile(file) {
-    var XLSX = require('xlsx');
-    var util = require('util');
     global.window.console.log("打开的文件名字: " + file);
-    var workbook = XLSX.readFile(file);
-    iterExcel(workbook);
+    var data= excel.getSheetDataFromFile('test',file);
+    global.window.console.log("拿到的数据: " + JSON.stringify(data));
+    exports.loadText(JSON.stringify(data));
 };
-
-function iterExcel(workbook){
-    var sheet_name_list = workbook.SheetNames;
-    sheet_name_list.forEach(function(y) { /* iterate through sheets */
-        var worksheet = workbook.Sheets[y];
-        for (z in worksheet) {
-            /* all keys that do not begin with "!" correspond to cell addresses */
-            if(z[0] === '!') continue;
-            console.log(y + "!" + z + "=" + JSON.stringify(worksheet[z].v));
-        }
-    });
-}

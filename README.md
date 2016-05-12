@@ -33,6 +33,16 @@ https://ducode.org/node-webkit-tutorial-creating-a-markdown-editor.html
 ```
 https://github.com/SheetJS/js-xlsx
 ```
+只能读取简单格式,拿到一个object 的数组
+```
+[ { id: '1', '名字': '哈哈', phone: '1324536' },
+  { id: '2', '名字': '哈哈', phone: '1324536' },
+  { id: '3', '名字': '哈哈', phone: '1324536' },
+  { id: '4', '名字': '哈哈', phone: '1324536' },
+  { id: '5', '名字': '哈哈', phone: '1324536' },
+  { id: '6', '名字': '傻逼', phone: '1324536' },
+  { id: '7', phone: '1324536' } ]
+```
 ### 3. casperjs通讯
 
 ```
