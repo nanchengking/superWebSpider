@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Hello World app</title>
+    <title>超级爬虫</title>
     <link rel="stylesheet" href="/app/assert/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/app/css/main.css" media="screen"/>
     <script src="/app/assert/jquery.js"></script>
@@ -11,9 +11,6 @@
         global.window = window;
         global.$ = $;
         global.gui = require('nw.gui');
-        global.alert = function () {
-            alert("Nih")
-        };
         init();
     </script>
 </head>
@@ -39,9 +36,10 @@
         </div>
         <button id="add" class="btn-primary">添加公司</button>
         <button id="submit" class="btn-success" onclick="getContent()">提交</button>
+        <button id="baidu" class="btn-primary">百度一下</button>
+        <button id="local" class="btn-primary">本地登陆页面</button>
     </div>
 </div>
-
 
 </body>
 </html>

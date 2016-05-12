@@ -3,12 +3,7 @@
  */
 function init() {
     global.$(global.window.document).ready(function () {
-        var editor = require("./../js/editor.js");
-        var textEditor = global.$('#editor');
-        //绑定了两个事件  一个是input是非IE浏览器,监控input内容改变,一个是IE专属的属性
-        textEditor.bind('input propertychange', function () {
-            editor.reload();
-        });
+        //初始化页面元素必须在页面加载之后才能运行
         initPage();
     });
     var menu = require("./../js/menu.js");
@@ -16,6 +11,13 @@ function init() {
 }
 
 function initPage() {
+    var editor = require("./../js/editor.js");
+    var controller=require("./../js/windowsController.js")
+    var textEditor = global.$('#editor');
+    //绑定了两个事件  一个是input是非IE浏览器,监控input内容改变,一个是IE专属的属性
+    textEditor.bind('input propertychange', function () {
+        editor.reload();
+    });
     console.log("初始化页面");
     var btn = global.$("#add");
     var content = $("#content");
@@ -24,6 +26,15 @@ function initPage() {
         var item = "<div class='login'><label>登录名：<input class='text-primary lg-name' type='text' /></label><label>密码：<input class='psd' type='password' /></label><label>上传文件：<input class='file' type='file' /></label></div>";
         content.append(item);
     });
+    var btnBaidu = global.$('#baidu');
+    btnBaidu.bind('click', function () {
+        controller.goToBaidu("美女");
+    });
+    var local = global.$('#local');
+    local.bind('click', function () {
+        controller.goToLogin();
+    });
+
 }
 
 /**
