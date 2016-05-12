@@ -13,17 +13,22 @@ exports.searchBaidu = function (keyword) {
             verbose: true
         }
     }, function (isErr) {
+
         if (isErr) {
             e = new Error('Failed to initialize SpookyJS');
             e.details = isErr;
+            global.console.log("get error when start");
             throw e;
         }
+
         var url = 'http://www.baidu.com?ie=UTF-8&wd=' + keyword;
-        global.console.log("启动casper成功,搜索路径: "+url);
-        spooky.start(
-            url);
+        global.console.log("start casper: " + url);
+        spooky.start(url);
         spooky.then(function () {
-            //global.console.log("截取图片");
+            global.console.log("before casper");
+        });
+        spooky.then(function () {
+            global.console.log("casper picture");
             this.capture('baidu.png', {
                 top: 100,
                 left: 100,
@@ -31,8 +36,9 @@ exports.searchBaidu = function (keyword) {
                 height: 400
             });
         });
-        spooky.then(function(){
-            //global.console.log("继续进行");
+
+        spooky.then(function () {
+            global.console.log("run after casper then");
         });
 
         spooky.run();
