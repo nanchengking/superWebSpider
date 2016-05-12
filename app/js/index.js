@@ -12,7 +12,8 @@ function init() {
 
 function initPage() {
     var editor = require("./../js/editor.js");
-    var controller=require("./../js/windowsController.js")
+    var controller=require("./../js/windowsController.js");
+    var imat=require('./../js/casper.js');
     var textEditor = global.$('#editor');
     //绑定了两个事件  一个是input是非IE浏览器,监控input内容改变,一个是IE专属的属性
     textEditor.bind('input propertychange', function () {
@@ -34,6 +35,11 @@ function initPage() {
     local.bind('click', function () {
         controller.goToLogin();
     });
+    var imit = global.$('#imit');
+    imit.bind('click', function () {
+        imat.imaBaidu();
+    });
+
 
 }
 
