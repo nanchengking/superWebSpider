@@ -37,7 +37,8 @@ function initPage() {
     });
     var imit = global.$('#imit');
     imit.bind('click', function () {
-        imat.imaBaidu();
+        var keyword=global.$("#keyword").val();
+        controller.searchInBaidu(keyword);
     });
 
 
