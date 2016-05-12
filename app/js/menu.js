@@ -6,7 +6,15 @@ exports.initMenu = function () {
     var win = global.gui.Window.get();
     var menubar = new global.gui.Menu({type: 'menubar'});
     var fileMenu = new global.gui.Menu();
-    var test = new global.gui.Menu();
+    var excel = new global.gui.Menu();
+    excel.append(new global.gui.MenuItem({
+        label: '打开',
+        click: function () {
+            editor.chooseFile("#openExcel", function (filename) {
+                editor.chooseExcel(filename);
+            });
+        }
+    }));
     fileMenu.append(new global.gui.MenuItem({
         label: '新建',
         click: function () {
@@ -51,6 +59,6 @@ exports.initMenu = function () {
     }));
 
     menubar.append(new global.gui.MenuItem({label: '文件', submenu: fileMenu}));
-    menubar.append(new global.gui.MenuItem({label: '测试', submenu: test}));
+    menubar.append(new global.gui.MenuItem({label: 'excel文件', submenu: excel}));
     win.menu = menubar;
 };
