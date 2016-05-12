@@ -11,17 +11,37 @@
         global.window = window;
         global.$ = $;
         global.gui = require('nw.gui');
-        global.alert= function(){alert("Nih")};
+        global.alert = function () {
+            alert("Nih")
+        };
         init();
     </script>
 </head>
 <body>
-<textarea name="markdown" id="editor" class="md_editor"></textarea>
-<div class="md_result">
+<div id="container" class="container">
+    <div class="row">
+        <textarea name="markdown" id="editor" class="md_editor"></textarea>
+        <div class="md_result">
+        </div>
+        <input style="display:none;" id="openFileDialog" type="file"/>
+        <input style="display:none;" type="file" id="saveFileDialog" nwsaveas="file.md"/>
+        <input style="display:none;" type="file" id="openExcel"/>
+    </div>
 
+    <div class="row">
+        <p>需要爬取的信息：</p>
+        <div id="content">
+            <div class="login">
+                <label>登录名：<input class="text-primary lg-name" type="text"/></label>
+                <label>密码：<input class="psd" type="password"/></label>
+                <label>上传文件：<input class="file" type="file"/></label>
+            </div>
+        </div>
+        <button id="add" class="btn-primary">添加公司</button>
+        <button id="submit" class="btn-success" onclick="getContent()">提交</button>
+    </div>
 </div>
-<input style="display:none;" id="openFileDialog" type="file" />
-<input style="display:none;" type="file"  id="saveFileDialog" nwsaveas="file.md" />
-<input style="display:none;" type="file"  id="openExcel" />
+
+
 </body>
 </html>
