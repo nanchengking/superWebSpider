@@ -21,24 +21,24 @@ exports.searchBaidu = function (keyword) {
             throw e;
         }
 
-        var url = 'http://www.baidu.com?ie=UTF-8&wd=' + keyword;
+        var url = 'https://www.baidu.com/s?ie=utf-8&wd=' + keyword;
         global.console.log("start casper: " + url);
         spooky.start(url);
         spooky.then(function () {
-            global.console.log("before casper");
+            this.echo("ready to do casper ");
         });
         spooky.then(function () {
-            global.console.log("casper picture");
+            console.log("casper picture");
             this.capture('baidu.png', {
-                top: 100,
-                left: 100,
-                width: 500,
-                height: 400
+                top: 0,
+                left: 0,
+                width: 900,
+                height: 900
             });
         });
 
         spooky.then(function () {
-            global.console.log("run after casper then");
+            console.log("run after casper then");
         });
 
         spooky.run();
